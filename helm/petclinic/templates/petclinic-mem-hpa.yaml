@@ -10,7 +10,9 @@ spec:
     kind: Deployment
     name: petclinic-deployment
   metrics:
-  - type: Resource
+  - type: Utilization # Specify the type as Utilization
     resource:
-      name: memory
-      targetAverageUtilization: 50
+      name: memory # Target memory usage
+      target: # Define the target object
+        type: Utilization # Utilization target again
+        averageUtilization: 80 # Set the desired average memory utilization (80%)
